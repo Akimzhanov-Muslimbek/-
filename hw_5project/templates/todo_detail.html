@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Todo Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Todo Details</h2>
+    <p><strong>Title:</strong> {{ todo.title }}</p>
+    <p><strong>Description:</strong> {{ todo.description }}</p>
+    <p><strong>Due Date:</strong> {{ todo.due_date }}</p>
+    <p><strong>Status:</strong> {{ todo.status|yesno:"Completed,Not Completed" }}</p>
+    <a href="{% url 'todo_list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Мои задачи</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo.title }} - {{ todo.description }} ({{ todo.due_date }})</li>
+        {% empty %}
+            <p>У вас нет задач.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
